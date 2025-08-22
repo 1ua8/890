@@ -3,59 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact</title>
+<title>Contact Us - couponi.site</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/js/script.js" defer></script>
+<style>
+/* تصميم مخصص للصفحة */
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.contact-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+.contact-form button {
+    padding: 12px;
+    background-color: #3b82f6;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background-color: #2563eb;
+}
+.contact-info {
+    margin-top: 30px;
+    text-align: center;
+    color: #555;
+}
+.contact-info p {
+    margin: 5px 0;
+}
+</style>
 </head>
-<body><header>
-<div class="container">
-<div class="header-content">
-<div class="logo">Discount Codex</div>
-<div class="tagline">Best Discount Codes &amp; Deals 2025</div>
-<div class="search-bar">
-<input placeholder="Search for brands or articles..." type="text"/>
-<button>Search</button>
-</div>
-</div>
-</div>
-</header><nav>
-<div class="container">
-<ul class="nav-links">
-<li><a class="active" href="#">Home</a></li>
-<li><a href="#blog">Blog</a></li>
-<li><a href="#">Fashion</a></li>
-<li><a href="#">Electronics</a></li>
-<li><a href="#">Home &amp; Garden</a></li>
-<li><a href="#">Travel</a></li>
-</ul>
-</div>
-</nav><main class='container'><h1>Contact Us</h1></main><footer>
-<div class="container">
-<div class="footer-content">
-<div>
-<h3>Discount Codex</h3>
-<p>Your trusted source for the best discount codes and deals worldwide since 2025.</p>
-</div>
-<div>
-<h3>Quick Links</h3>
-<ul class="footer-links">
-<li><a href="#">Home</a></li>
-<li><a href="#blog">Blog</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Contact Us</a></li>
-</ul>
-</div>
-<div>
-<h3>Connect With Us</h3>
-<div class="social-links">
-<a href="#">FB</a>
-<a href="#">TW</a>
-<a href="#">IG</a>
-</div>
-</div>
-</div>
-<div class="copyright">
-<p>© 2025 Discount Codex. All rights reserved.</p>
-</div>
-</div>
-</footer></body></html>
+<body>
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">couponi.site</div>
+      <div class="tagline">Best Discount Codes & Deals 2025</div>
+    </div>
+  </div>
+</header>
+<nav>
+  <div class="container">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a class="active" href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="container">
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form class="contact-form" action="mailto:7asodj@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:7asodj@gmail.com">7asodj@gmail.com</a></p>
+      <p>Phone: +966 5XXXXXXXX</p>
+      <p>Address: Riyadh, Saudi Arabia</p>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <h3>couponi.site</h3>
+        <p>Your trusted source for the best discount codes and deals worldwide since 2025.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect With Us</h3>
+        <div class="social-links">
+          <a href="#">FB</a>
+          <a href="#">TW</a>
+          <a href="#">IG</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 couponi.site. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
