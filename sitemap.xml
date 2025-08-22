@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url><loc>/index.html</loc></url>
-    <url><loc>/privacy.html</loc></url>
-    <url><loc>/contact.html</loc></url>
+    <url>
+        <loc>https://couponi.site/index.html</loc>
+    </url>
+    <url>
+        <loc>https://couponi.site/privacy.html</loc>
+    </url>
+    <url>
+        <loc>https://couponi.site/contact.html</loc>
+    </url>
+    <url>
+        <loc>https://couponi.site/404.html</loc>
+    </url>
+    <!-- مثال لصفحات داخل مجلد brands -->
+    <url>
+        <loc>https://couponi.site/brands/brand1.html</loc>
+    </url>
+    <url>
+        <loc>https://couponi.site/brands/brand2.html</loc>
+    </url>
 </urlset>
