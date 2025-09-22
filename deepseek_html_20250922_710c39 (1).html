@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كوبون XMQM - خصم حتى 80%</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #fff;
+            font-size: 42px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .coupon-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            margin-bottom: 30px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .coupon-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .coupon-header {
+            background: linear-gradient(135deg, #FF416C, #FF4B2B);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .coupon-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .coupon-subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+        
+        .coupon-code {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 2px dashed #ddd;
+            position: relative;
+        }
+        
+        .coupon-code::before, .coupon-code::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #6a11cb;
+            border-radius: 50%;
+            top: -15px;
+        }
+        
+        .coupon-code::before {
+            left: -15px;
+        }
+        
+        .coupon-code::after {
+            right: -15px;
+        }
+        
+        .code {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: 8px;
+            color: #FF416C;
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 15px 0;
+            border: 3px dashed #FF416C;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .code:hover {
+            transform: scale(1.05);
+            background: #e9ecef;
+            box-shadow: 0 10px 20px rgba(255, 65, 108, 0.3);
+        }
+        
+        .coupon-instructions {
+            padding: 25px;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            background: #fafafa;
+        }
+        
+        .coupon-instructions p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .coupon-instructions i {
+            margin-left: 10px;
+            color: #6a11cb;
+            font-size: 20px;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FF416C, #FF4B2B);
+            color: white;
+            box-shadow: 0 10px 20px rgba(255, 75, 43, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 75, 43, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #6a11cb;
+            border: 3px solid #6a11cb;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+            transform: translateY(-3px);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: white;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+            transform: translateY(-2px);
+        }
+        
+        .timer {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            color: white;
+            font-size: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .timer span {
+            font-weight: bold;
+            font-size: 28px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 10px;
+            margin: 0 8px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            text-align: center;
+            color: white;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            flex: 1;
+            padding: 15px;
+            min-width: 120px;
+        }
+        
+        .feature i {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+            background: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+        
+        .feature p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .code {
+                font-size: 36px;
+                letter-spacing: 5px;
+                padding: 15px;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .feature {
+                margin-bottom: 15px;
+            }
+            
+            .timer span {
+                font-size: 22px;
+                padding: 5px 10px;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 65, 108, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(255, 65, 108, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 65, 108, 0); }
+        }
+        
+        .copy-message {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #6a11cb;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+            font-weight: bold;
+        }
+        
+        .copy-message.show {
+            opacity: 1;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: #FFD700;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        
+        .watermark {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            opacity: 0.05;
+            font-size: 120px;
+            font-weight: 900;
+            color: #6a11cb;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>كوبون XMQM</h1>
+            <p>احصل على خصم حصري حتى 80%</p>
+        </div>
+        
+        <div class="timer">
+            <p>ينتهي العرض خلال: <span id="hours">02</span>:<span id="minutes">30</span>:<span id="seconds">15</span></p>
+        </div>
+        
+        <div class="coupon-card">
+            <div class="discount-badge">حصري!</div>
+            <div class="coupon-header">
+                <div class="coupon-title">خصم حتى %80</div>
+                <div class="coupon-subtitle">على آلاف المنتجات في نون</div>
+            </div>
+            
+            <div class="coupon-code">
+                <p style="font-size: 18px; margin-bottom: 10px;">انسخ الكود واستخدمه في الدفع</p>
+                <div class="code pulse" id="couponCode">XMQM</div>
+                <p style="font-size: 16px; color: #666;">احصل على خصم فوري عند الدفع</p>
+            </div>
+            
+            <div class="coupon-instructions">
+                <p><i class="fas fa-copy"></i> انسخ الكود XMQM أعلاه</p>
+                <p><i class="fas fa-store"></i> انتقل إلى متجر نون</p>
+                <p><i class="fas fa-shopping-cart"></i> أضف المنتجات إلى سلة التسوق</p>
+                <p><i class="fas fa-ticket-alt"></i> أدخل الكود في صفحة الدفع</p>
+                <p><i class="fas fa-gift"></i> استمتع بالخصم الفوري!</p>
+            </div>
+            
+            <div class="watermark">XMQM</div>
+        </div>
+        
+        <a href="#" class="btn btn-primary"><i class="fas fa-store"></i> الذهاب إلى متجر نون</a>
+        <a href="#" class="btn btn-secondary"><i class="fas fa-share-alt"></i> مشاركة الكوبون مع الأصدقاء</a>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-shipping-fast"></i>
+                <p>شحن مجاني</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-undo-alt"></i>
+                <p>إرجاع مجاني</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <p>دفع آمن</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <p>دعم 24/7</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>XMQM &copy; 2023 - جميع الحقوق محفوظة</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-file-contract"></i> شروط الاستخدام</a>
+                <a href="#"><i class="fas fa-user-shield"></i> سياسة الخصوصية</a>
+                <a href="#"><i class="fas fa-phone-alt"></i> تواصل معنا</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copy-message" id="copyMessage">تم نسخ كود XMQM بنجاح!</div>
+
+    <script>
+        // نسخ الكود عند النقر عليه
+        document.getElementById('couponCode').addEventListener('click', function() {
+            const code = this.innerText;
+            const tempInput = document.createElement('input');
+            tempInput.value = code;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            // إظهار رسالة النسخ
+            const copyMessage = document.getElementById('copyMessage');
+            copyMessage.classList.add('show');
+            
+            setTimeout(() => {
+                copyMessage.classList.remove('show');
+            }, 2000);
+        });
+        
+        // عد تنازلي للعرض
+        function updateCountdown() {
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            
+            let hours = parseInt(hoursElement.textContent);
+            let minutes = parseInt(minutesElement.textContent);
+            let seconds = parseInt(secondsElement.textContent);
+            
+            seconds--;
+            
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    
+                    if (hours < 0) {
+                        // إعادة تعيين العد التنازلي عند الانتهاء
+                        hours = 2;
+                        minutes = 30;
+                        seconds = 15;
+                    }
+                }
+            }
+            
+            hoursElement.textContent = hours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // تحديث العد التنازلي كل ثانية
+        setInterval(updateCountdown, 1000);
+        
+        // تأثيرات إضافية
+        document.querySelector('.btn-primary').addEventListener('mouseover', function() {
+            this.style.background = 'linear-gradient(135deg, #FF4B2B, #FF416C)';
+        });
+        
+        document.querySelector('.btn-primary').addEventListener('mouseout', function() {
+            this.style.background = 'linear-gradient(135deg, #FF416C, #FF4B2B)';
+        });
+    </script>
+</body>
+</html>
