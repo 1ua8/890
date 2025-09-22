@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كوبون XMQM - خصم حتى 80%</title>
+    <title>كود خصم نون XMQM - خصم حتى 80% على آلاف المنتجات</title>
+    <meta name="description" content="كود خصم نون XMQM - احصل على خصم حصري حتى 80% على آلاف المنتجات في متجر نون. استخدم كوبون الخصم XMQM للحصول على تخفيضات فورية">
+    <meta name="keywords" content="كود خصم نون, كوبون نون, كود نون, خصم نون, XMQM, كوبون خصم نون, عروض نون, تخفيضات نون">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -355,12 +357,28 @@
             transform: rotate(-15deg);
             pointer-events: none;
         }
+        
+        .seo-text {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            color: white;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .seo-text h2 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>كوبون XMQM</h1>
+            <h1>كود خصم نون XMQM</h1>
             <p>احصل على خصم حصري حتى 80%</p>
         </div>
         
@@ -376,13 +394,13 @@
             </div>
             
             <div class="coupon-code">
-                <p style="font-size: 18px; margin-bottom: 10px;">انسخ الكود واستخدمه في الدفع</p>
+                <p style="font-size: 18px; margin-bottom: 10px;">انسخ كود خصم نون XMQM واستخدمه في الدفع</p>
                 <div class="code pulse" id="couponCode">XMQM</div>
                 <p style="font-size: 16px; color: #666;">احصل على خصم فوري عند الدفع</p>
             </div>
             
             <div class="coupon-instructions">
-                <p><i class="fas fa-copy"></i> انسخ الكود XMQM أعلاه</p>
+                <p><i class="fas fa-copy"></i> انسخ كود نون XMQM أعلاه</p>
                 <p><i class="fas fa-store"></i> انتقل إلى متجر نون</p>
                 <p><i class="fas fa-shopping-cart"></i> أضف المنتجات إلى سلة التسوق</p>
                 <p><i class="fas fa-ticket-alt"></i> أدخل الكود في صفحة الدفع</p>
@@ -392,8 +410,13 @@
             <div class="watermark">XMQM</div>
         </div>
         
-        <a href="#" class="btn btn-primary"><i class="fas fa-store"></i> الذهاب إلى متجر نون</a>
-        <a href="#" class="btn btn-secondary"><i class="fas fa-share-alt"></i> مشاركة الكوبون مع الأصدقاء</a>
+        <a href="https://www.noon.com" class="btn btn-primary"><i class="fas fa-store"></i> الذهاب إلى متجر نون</a>
+        <a href="#" class="btn btn-secondary" id="shareBtn"><i class="fas fa-share-alt"></i> مشاركة الكوبون مع الأصدقاء</a>
+        
+        <div class="seo-text">
+            <h2>كود خصم نون XMQM - أفضل عروض نون</h2>
+            <p>استخدم كود خصم نون XMQM للحصول على خصم حصري حتى 80% على آلاف المنتجات في متجر نون. كوبون الخصم XMQM صالح على الإلكترونيات، الأزياء، المنزل، والعناية الشخصية. لا تفوت فرصة الحصول على أفضل العروض والتخفيضات باستخدام كود نون XMQM.</p>
+        </div>
         
         <div class="features">
             <div class="feature">
@@ -415,7 +438,7 @@
         </div>
         
         <div class="footer">
-            <p>XMQM &copy; 2023 - جميع الحقوق محفوظة</p>
+            <p>كود خصم نون XMQM &copy; 2023 - جميع الحقوق محفوظة</p>
             <div class="footer-links">
                 <a href="#"><i class="fas fa-file-contract"></i> شروط الاستخدام</a>
                 <a href="#"><i class="fas fa-user-shield"></i> سياسة الخصوصية</a>
@@ -424,7 +447,7 @@
         </div>
     </div>
     
-    <div class="copy-message" id="copyMessage">تم نسخ كود XMQM بنجاح!</div>
+    <div class="copy-message" id="copyMessage">تم نسخ كود خصم نون XMQM بنجاح!</div>
 
     <script>
         // نسخ الكود عند النقر عليه
@@ -444,6 +467,29 @@
             setTimeout(() => {
                 copyMessage.classList.remove('show');
             }, 2000);
+        });
+        
+        // مشاركة الكوبون
+        document.getElementById('shareBtn').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'كود خصم نون XMQM - خصم حتى 80%',
+                    text: 'استخدم كود خصم نون XMQM للحصول على خصم حصري حتى 80% على آلاف المنتجات!',
+                    url: window.location.href
+                })
+                .catch(error => console.log('Error sharing:', error));
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const shareText = `كود خصم نون XMQM - خصم حتى 80%!\nاستخدم الكود: XMQM\n${window.location.href}`;
+                const tempInput = document.createElement('textarea');
+                tempInput.value = shareText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                
+                alert('تم نسخ رابط مشاركة كود خصم نون XMQM إلى الحافظة!');
+            }
         });
         
         // عد تنازلي للعرض
