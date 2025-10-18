@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.wadhefa.com	TRUE	/	FALSE	1999999999	phpjob_ct	1760781098
+www.wadhefa.com	TRUE	/	FALSE	1999999999	PHPSESSID	d6fdb833c0454d2361c4c56595c8fd30
+www.wadhefa.com	TRUE	/	FALSE	1999999999	phpjob_sk	grayarabicnew
+www.wadhefa.com	TRUE	/	FALSE	1999999999	phpjob_lng	english
+
