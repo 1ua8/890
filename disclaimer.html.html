@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - High-Risk Car Insurance Calculator</title>
+    <meta name="description" content="Full disclaimer for the High-Risk Car Insurance Calculator. All estimates are for informational purposes only.">
+    <style>
+        /* Same styles as index.html */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1e293b; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1, h2 { margin-bottom: 20px; color: #1e293b; }
+        p { margin-bottom: 15px; color: #64748b; }
+        a { color: #2a5bd7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        footer { background-color: #1e293b; color: white; padding: 30px 0; text-align: center; margin-top: 40px; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+        .footer-links a { color: #e2e8f0; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Disclaimer</h1>
+        
+        <p><strong>Last Updated:</strong> <span id="current-date"></span></p>
+        
+        <h2>1. No Insurance Services Provided</h2>
+        <p>High-Risk Car Insurance Calculator is an informational website only. We do not sell insurance, provide insurance quotes, act as insurance agents or brokers, or facilitate the purchase of insurance policies. We are not affiliated with any insurance company.</p>
+        
+        <h2>2. Informational Estimates Only</h2>
+        <p>All insurance cost estimates provided by our calculator are for informational and educational purposes only. These estimates are based on simplified calculations and general statistical data. They are not actual insurance quotes and should not be relied upon when making insurance purchasing decisions.</p>
+        
+        <h2>3. Accuracy of Information</h2>
+        <p>While we strive to provide reasonably accurate estimates based on publicly available data, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the estimates provided. Actual insurance rates may vary significantly based on numerous factors not considered in our calculations.</p>
+        
+        <h2>4. Factors Not Considered</h2>
+        <p>Our calculator does not consider all factors that insurance companies use to determine actual rates, including but not limited to:
+        <ul style="margin-left: 20px; color: #64748b;">
+            <li>Exact location within a state</li>
+            <li>Credit history and score</li>
+            <li>Exact vehicle make, model, and year</li>
+            <li>Annual mileage</li>
+            <li>Coverage limits and deductibles</li>
+            <li>Insurance history and prior claims</li>
+            <li>Occupation and education</li>
+            <li>Marital status</li>
+        </ul>
+        </p>
+        
+        <h2>5. No Financial or Legal Advice</h2>
+        <p>The information provided on this website does not constitute financial advice, legal advice, or insurance advice. You should consult with licensed insurance professionals and financial advisors before making any insurance purchasing decisions.</p>
+        
+        <h2>6. No Guarantees</h2>
+        <p>We do not guarantee that you will receive insurance rates similar to our estimates. Insurance companies have their own underwriting criteria and rate-setting methodologies that may result in significantly different actual premiums.</p>
+        
+        <h2>7. Third-Party Links</h2>
+        <p>Our website may contain links to third-party websites. These links are provided for your convenience only. We have no control over the content of these websites and accept no responsibility for them or for any loss or damage that may arise from your use of them.</p>
+        
+        <h2>8. Use at Your Own Risk</h2>
+        <p>Your use of our calculator and website is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis without any warranties of any kind.</p>
+        
+        <h2>9. Updates to Disclaimer</h2>
+        <p>We may update this disclaimer from time to time. The updated version will be indicated by an updated "Last Updated" date at the top of this page.</p>
+        
+        <p style="margin-top: 30px;"><a href="index.html">← Back to Home</a></p>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <p>&copy; <span id="current-year">2023</span> High-Risk Car Insurance Calculator. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
