@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-Risk Car Insurance Cost Estimator | Compare Rates</title>
-    <meta name="description" content="Get a free instant estimate for high-risk car insurance costs even with tickets, accidents, or SR-22. No personal data collected.">
+    <title>High-Risk Car Insurance Cost Estimator | Compare Rates Instantly</title>
+    <meta name="description" content="Free instant estimate for high-risk car insurance costs. Compare rates with tickets, accidents, or SR-22. No personal data collected.">
     
-   <!-- AdSense Code in HEAD -->
+    <!-- AdSense Script -->
     <script async='async' crossorigin='anonymous' data-page-url='https://allfinance.seesaa.net/' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1888976302703450'></script>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
     <style>
         /* RESET & BASE STYLES */
         * {
@@ -131,11 +135,49 @@
             transform: translateY(0);
         }
 
+        /* AD CONTAINERS */
+        .ad-container {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .ad-container.large-banner {
+            width: 100%;
+            max-width: 728px;
+            min-height: 90px;
+        }
+
+        .ad-container.medium-rectangle {
+            width: 100%;
+            max-width: 336px;
+            min-height: 280px;
+        }
+
+        .ad-container.small-rectangle {
+            width: 100%;
+            max-width: 300px;
+            min-height: 250px;
+        }
+
+        .ad-container.centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         /* HERO SECTION */
         .hero {
             background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%);
-            padding: 80px 0 60px;
+            padding: 80px 0 40px;
             text-align: center;
+            position: relative;
         }
 
         .hero h1 {
@@ -148,47 +190,32 @@
         .hero p {
             font-size: 1.25rem;
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             color: var(--dark);
         }
 
-        /* AD CONTAINERS */
-        .ad-container {
-            background-color: var(--gray-light);
-            border-radius: var(--border-radius);
-            margin: 30px 0;
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .ad-container.responsive-ad {
-            width: 100%;
-            max-width: 728px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .ad-container.placeholder {
-            border: 2px dashed var(--gray);
-            padding: 30px;
-            text-align: center;
-            color: var(--gray);
-        }
-
-        .ad-container.placeholder p {
-            margin: 0;
-            color: var(--gray);
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
             font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        /* TOP AD SECTION */
+        .top-ad-section {
+            padding: 20px 0;
+            background-color: #f8fafc;
         }
 
         /* CALCULATOR SECTION */
         .calculator-section {
             background-color: white;
-            padding-top: 30px;
-            padding-bottom: 30px;
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
 
         .calculator-container {
@@ -266,11 +293,29 @@
             text-align: left;
         }
 
-        /* TRUST LINE */
-        .trust-line {
-            font-size: 14px;
-            color: #64748b;
-            margin-top: 10px;
+        /* BENEFITS SECTION */
+        .benefits-section {
+            background-color: #f8fafc;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
             margin-bottom: 20px;
         }
 
@@ -377,13 +422,6 @@
             color: var(--gray-light);
         }
 
-        /* MICRO-COPIES */
-        .micro-copy {
-            font-size: 13px;
-            color: #94a3b8;
-            margin-top: 10px;
-        }
-
         /* RESPONSIVE STYLES */
         @media (max-width: 768px) {
             h1 {
@@ -407,15 +445,15 @@
             }
             
             .hero {
-                padding: 60px 0 40px;
+                padding: 60px 0 30px;
             }
             
             .ad-container {
-                margin: 20px 0;
+                margin: 20px auto;
             }
             
-            .ad-container.placeholder {
-                padding: 20px;
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
             
             .footer-links {
@@ -440,20 +478,27 @@
                 flex-direction: column;
                 gap: 10px;
             }
-        }
-
-        /* AD RESPONSIVE STYLES */
-        @media (max-width: 800px) {
-            .ad-container.responsive-ad {
-                max-width: 468px;
-                min-height: 60px;
+            
+            .ad-container.large-banner {
+                max-width: 320px;
+                min-height: 100px;
+            }
+            
+            .ad-container.medium-rectangle {
+                max-width: 300px;
+                min-height: 250px;
+            }
+            
+            .ad-container.small-rectangle {
+                max-width: 300px;
+                min-height: 250px;
             }
         }
 
-        @media (max-width: 500px) {
-            .ad-container.responsive-ad {
-                max-width: 320px;
-                min-height: 50px;
+        /* PRINT STYLES */
+        @media print {
+            .ad-container, .btn {
+                display: none !important;
             }
         }
     </style>
@@ -462,24 +507,25 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <h1>Compare High-Risk Car Insurance Costs Instantly (Free Estimate)</h1>
-            <p>Get an instant estimate even if you have tickets, accidents, or SR-22.</p>
+            <div class="hero-badge">FREE INSTANT ESTIMATE</div>
+            <h1>Compare High-Risk Car Insurance Costs Instantly</h1>
+            <p>Get an accurate estimate even with tickets, accidents, or SR-22 requirements. No personal information needed.</p>
         </div>
     </section>
 
-    <!-- AD PLACEHOLDER TOP - تم استبداله بكود AdSense الفعلي -->
-    <div class="container">
-        <div id="ad-top" class="ad-container responsive-ad">
-            <!-- AdSense Banner Ad -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1888976302703450"
-                 data-ad-slot="9213262186"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+    <!-- TOP AD - Large Banner (728x90) -->
+    <div class="top-ad-section">
+        <div class="container">
+            <div class="ad-container large-banner centered">
+                <!-- Top of Page Ad - 728x90 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-1888976302703450"
+                     data-ad-slot="5327077706"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         </div>
     </div>
 
@@ -487,8 +533,8 @@
     <section class="calculator-section">
         <div class="container">
             <div class="calculator-container">
-                <h2>Estimate Your Insurance Cost</h2>
-                <p>Fill out the form below to get an instant estimate. No personal information required.</p>
+                <h2>Get Your Free Insurance Estimate</h2>
+                <p>Fill out the form below to see your potential insurance costs. No personal data is collected or stored.</p>
                 
                 <form id="insurance-calculator">
                     <div class="form-group">
@@ -535,7 +581,35 @@
                     </div>
                     
                     <button type="submit" class="btn">See My Cost Range</button>
+                    
+                    <div class="trust-line" style="font-size: 14px; color: #64748b; margin-top: 15px; text-align: center;">
+                        🔒 Your information is never saved or shared
+                    </div>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 style="text-align: center;">Why Use Our Estimator?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Instant Results</h3>
+                    <p>Get your estimate in seconds without waiting for callbacks or emails.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>100% Private</h3>
+                    <p>We don't collect or store any personal information. No spam, no calls.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Accurate Estimates</h3>
+                    <p>Based on real insurance data from high-risk drivers in your area.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -550,28 +624,24 @@
                     <h3>Estimated Monthly Cost Range</h3>
                     <div class="result-value" id="estimated-cost">$0 - $0</div>
                     
-                    <!-- TRUST / CREDIBILITY LINE -->
-                    <p class="trust-line">Rates shown are based on similar high-risk drivers in your state.</p>
-                    
-                    <!-- OPTIONAL PSYCHOLOGICAL MICRO-COPY -->
-                    <p class="micro-copy">Most users see results within 1–3 minutes depending on selections.</p>
+                    <p style="color: var(--gray); margin-bottom: 20px;">
+                        Based on similar high-risk drivers in your state with your selected profile.
+                    </p>
                     
                     <div class="result-note">
-                        <p><strong>Important:</strong> This is an estimate only and not a final insurance quote. Actual rates may vary based on additional factors including credit history, exact location, insurance history, and specific vehicle details.</p>
+                        <p><strong>Important Note:</strong> This is an estimate only and not a final insurance quote. Actual rates may vary based on additional factors including credit history, exact location, insurance history, and specific vehicle details.</p>
                     </div>
                 </div>
                 
-                <!-- AD PLACEHOLDER RESULTS - تم استبداله بكود AdSense الفعلي -->
-                <div id="ad-results" class="ad-container responsive-ad">
-                    <!-- AdSense Banner Ad -->
+                <!-- AD AFTER RESULTS - Medium Rectangle (336x280) -->
+                <div class="ad-container medium-rectangle centered">
+                    <!-- In FAQ Middle - 336x280 -->
                     <ins class="adsbygoogle"
-                         style="display:block"
+                         style="display:inline-block;width:336px;height:280px"
                          data-ad-client="ca-pub-1888976302703450"
-                         data-ad-slot="9213262186"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
+                         data-ad-slot="7171654179"></ins>
                     <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
+                        (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
                 
@@ -584,7 +654,7 @@
     <section class="faq-section">
         <div class="container">
             <div class="faq-container">
-                <h2>Frequently Asked Questions</h2>
+                <h2 style="text-align: center;">Frequently Asked Questions</h2>
                 
                 <div class="faq-list">
                     <div class="faq-item">
@@ -593,37 +663,49 @@
                             <span class="faq-icon">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p>High-risk car insurance is for drivers who are considered more likely to file a claim. This includes drivers with a history of accidents, traffic violations, DUIs, or those who require an SR-22 filing. Insurance companies may charge higher premiums for these drivers.</p>
+                            <p>High-risk car insurance is designed for drivers who insurance companies consider more likely to file claims. This includes drivers with traffic violations, at-fault accidents, DUI convictions, or those who require SR-22 filings. These drivers typically pay higher premiums due to their increased risk profile.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>Does SR-22 increase insurance cost?</span>
+                            <span>How much does SR-22 increase insurance costs?</span>
                             <span class="faq-icon">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes, an SR-22 filing typically increases insurance costs. An SR-22 is a certificate of financial responsibility required for high-risk drivers. Insurance companies view drivers requiring SR-22 as higher risk, which results in higher premiums.</p>
+                            <p>An SR-22 filing can increase insurance costs by 50-150% on average. The exact increase depends on your state, driving history, and insurance company. An SR-22 is not insurance itself but a certificate proving you carry the state-required minimum insurance. Insurance companies view drivers requiring SR-22 as high-risk, leading to significantly higher premiums.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- AD IN FAQ - Small Rectangle (300x250) -->
+                    <div class="ad-container small-rectangle centered" style="margin: 30px auto;">
+                        <!-- After Results - 300x250 -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:300px;height:250px"
+                             data-ad-client="ca-pub-1888976302703450"
+                             data-ad-slot="7542177502"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How can I lower my high-risk insurance rates?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can potentially lower your rates by: (1) Maintaining a clean driving record going forward, (2) Taking defensive driving courses, (3) Increasing your deductible, (4) Bundling multiple insurance policies, (5) Shopping around with multiple providers annually, (6) Considering usage-based insurance programs, and (7) Improving your credit score (in states where it's allowed).</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>How can I lower my insurance rate?</span>
+                            <span>What factors affect high-risk insurance costs most?</span>
                             <span class="faq-icon">+</span>
                         </div>
                         <div class="faq-answer">
-                            <p>You can potentially lower your insurance rate by maintaining a clean driving record, taking defensive driving courses, increasing your deductible, bundling insurance policies, and shopping around for quotes from multiple insurance providers.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What factors affect high-risk insurance costs?</span>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Key factors include driving record (accidents, tickets, DUIs), age, location, type of vehicle, coverage limits, credit history (in some states), and how long you've been continuously insured.</p>
+                            <p>The primary factors are: Driving record (recent violations and accidents), age (especially under 25), location (urban vs. rural), type of vehicle, coverage limits required, length of continuous insurance coverage, credit history (in most states), and specific violations (DUI increases rates more than speeding tickets).</p>
                         </div>
                     </div>
                 </div>
@@ -631,33 +713,17 @@
         </div>
     </section>
 
-    <!-- AD PLACEHOLDER BOTTOM - تم استبداله بكود AdSense الفعلي -->
-    <div class="container">
-        <div id="ad-bottom" class="ad-container responsive-ad">
-            <!-- AdSense Banner Ad -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-1888976302703450"
-                 data-ad-slot="9213262186"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
-
     <!-- DISCLAIMER SECTION -->
     <section class="disclaimer-section">
         <div class="container">
             <div class="disclaimer-container">
-                <h2>Important Disclaimer</h2>
+                <h2>Important Legal Disclaimer</h2>
                 <div class="disclaimer-content">
-                    <p><strong>This website does not provide real insurance quotes.</strong> We are not affiliated with any insurance company and do not sell insurance products. The estimates provided on this page are for informational purposes only and are based on simplified calculations.</p>
-                    <p><strong>No personal data is collected or stored</strong> when you use this calculator. We do not save any information you enter, and we do not share data with any third parties.</p>
-                    <p><strong>Estimates are not guaranteed</strong> and actual insurance rates may vary significantly based on many factors not considered in this calculator. To obtain actual insurance quotes, please contact licensed insurance providers directly.</p>
-                    <p>This tool is intended to provide a general idea of potential insurance costs for high-risk drivers and should not be considered financial or insurance advice.</p>
-                    <p style="margin-top: 20px;"><a href="disclaimer.html">Read full disclaimer</a></p>
+                    <p><strong>This website does not provide actual insurance quotes or sell insurance.</strong> We are not affiliated with any insurance company and do not provide insurance services. The estimates on this page are for informational purposes only.</p>
+                    <p><strong>No personal data is collected or stored</strong> when you use this calculator. We do not save, share, or sell any information you enter. All calculations happen locally in your browser.</p>
+                    <p><strong>Estimates are not guaranteed or binding.</strong> Actual insurance rates may vary significantly based on factors not considered in this calculator. To obtain actual insurance quotes, contact licensed insurance providers directly.</p>
+                    <p>This tool provides general estimates for educational purposes and should not be considered financial or insurance advice. Always consult with licensed insurance professionals for your specific situation.</p>
+                    <p style="margin-top: 20px;"><a href="disclaimer.html" style="color: #7f1d1d; font-weight: 600;">Read Full Legal Disclaimer</a></p>
                 </div>
             </div>
         </div>
@@ -667,8 +733,8 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h3>High-Risk Car Insurance Calculator</h3>
-                <p>An informational tool to help estimate potential insurance costs for high-risk drivers.</p>
+                <h3>High-Risk Car Insurance Cost Estimator</h3>
+                <p>A free educational tool to help estimate potential insurance costs for high-risk drivers.</p>
                 
                 <div class="footer-links">
                     <a href="index.html">Home</a>
@@ -679,20 +745,19 @@
                 </div>
                 
                 <div class="copyright">
-                    <p>&copy; <span id="current-year">2023</span> High-Risk Car Insurance Calculator. All estimates are for informational purposes only.</p>
+                    <p>&copy; <span id="current-year">2023</span> High-Risk Car Insurance Calculator. All estimates are for informational purposes only. Not affiliated with any insurance company.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- CALCULATOR LOGIC -->
+    <!-- JAVASCRIPT -->
     <script>
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
         
-        // Base pricing model for calculator
+        // Base pricing model
         const baseRates = {
-            // Base monthly rates by driving record
             drivingRecord: {
                 clean: { base: 120, multiplier: 1.0 },
                 tickets: { base: 160, multiplier: 1.3 },
@@ -700,21 +765,18 @@
                 sr22: { base: 280, multiplier: 2.2 }
             },
             
-            // Multipliers by car type
             carType: {
                 sedan: 1.0,
                 suv: 1.2,
                 sports: 1.8
             },
             
-            // Multipliers by age (simplified)
             ageMultipliers: {
                 young: { min: 18, max: 25, multiplier: 1.8 },
                 middle: { min: 26, max: 65, multiplier: 1.0 },
                 senior: { min: 66, max: 85, multiplier: 1.3 }
             },
             
-            // State adjustment factors (simplified)
             stateFactors: {
                 CA: 1.4,
                 TX: 1.1,
@@ -729,67 +791,83 @@
             }
         };
         
-        // Form submission handler
+        // Form submission
         document.getElementById('insurance-calculator').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Calculating...';
+            submitBtn.disabled = true;
+            
+            // Get values
             const state = document.getElementById('state').value;
             const age = parseInt(document.getElementById('age').value);
             const drivingRecord = document.getElementById('driving-record').value;
             const carType = document.getElementById('car-type').value;
             
-            // Calculate estimate
-            const estimate = calculateEstimate(state, age, drivingRecord, carType);
-            
-            // Display results
-            document.getElementById('estimated-cost').textContent = estimate;
-            document.getElementById('results-section').style.display = 'block';
-            
-            // Scroll to results
-            document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
-            
-            // Refresh AdSense ads in results section
+            // Simulate calculation delay
             setTimeout(() => {
-                try {
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                } catch (e) {
-                    console.log('AdSense refresh error:', e);
-                }
-            }, 500);
+                // Calculate estimate
+                const estimate = calculateEstimate(state, age, drivingRecord, carType);
+                
+                // Display results
+                document.getElementById('estimated-cost').textContent = estimate;
+                document.getElementById('results-section').style.display = 'block';
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Scroll to results
+                document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+                
+                // Refresh AdSense ads
+                setTimeout(() => {
+                    try {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } catch (e) {
+                        console.log('AdSense refresh:', e);
+                    }
+                }, 300);
+            }, 800);
         });
         
-        // Recalculate button handler
+        // Recalculate button
         document.getElementById('recalculate-btn').addEventListener('click', function() {
-            // Hide results section first
             document.getElementById('results-section').style.display = 'none';
-            
-            // Scroll back to calculator
-            document.querySelector('.calculator-section').scrollIntoView({ behavior: 'smooth' });
-            
-            // Reset form
             document.getElementById('insurance-calculator').reset();
+            document.querySelector('.calculator-section').scrollIntoView({ behavior: 'smooth' });
         });
         
-        // FAQ toggle functionality
+        // FAQ functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
                 const answer = faqItem.querySelector('.faq-answer');
                 
-                // Toggle active class
+                // Close other open FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ
                 faqItem.classList.toggle('active');
                 answer.classList.toggle('active');
             });
         });
         
-        // Calculate insurance estimate
+        // Calculate estimate function
         function calculateEstimate(state, age, drivingRecord, carType) {
-            // Get base rate for driving record
             const recordData = baseRates.drivingRecord[drivingRecord];
             let baseCost = recordData.base;
             
-            // Apply age multiplier
+            // Age multiplier
             let ageMultiplier = 1.0;
             if (age >= 18 && age <= 25) {
                 ageMultiplier = baseRates.ageMultipliers.young.multiplier;
@@ -799,52 +877,80 @@
                 ageMultiplier = baseRates.ageMultipliers.senior.multiplier;
             }
             
-            // Apply car type multiplier
+            // Other multipliers
             const carMultiplier = baseRates.carType[carType];
-            
-            // Apply state factor
             const stateFactor = baseRates.stateFactors[state] || 1.0;
             
-            // Calculate final estimate
+            // Calculate
             let estimatedCost = baseCost * ageMultiplier * carMultiplier * stateFactor;
             
-            // Add some randomness to create a range (10% variance)
-            const variance = 0.1;
+            // Add variance for range
+            const variance = 0.15;
             const minCost = Math.floor(estimatedCost * (1 - variance));
             const maxCost = Math.ceil(estimatedCost * (1 + variance));
             
-            // Format as currency
             return `$${minCost} – $${maxCost}`;
         }
         
-        // Simple validation for age input
+        // Age validation
         document.getElementById('age').addEventListener('input', function() {
             const age = parseInt(this.value);
             if (age < 18) {
-                this.setCustomValidity('You must be at least 18 years old.');
+                this.setCustomValidity('Minimum age is 18');
+                this.style.borderColor = 'var(--danger)';
             } else if (age > 85) {
-                this.setCustomValidity('Please enter an age between 18 and 85.');
+                this.setCustomValidity('Maximum age is 85');
+                this.style.borderColor = 'var(--danger)';
             } else {
                 this.setCustomValidity('');
+                this.style.borderColor = 'var(--gray-light)';
             }
         });
         
-        // Initialize AdSense ads after page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // AdSense ads are initialized automatically by the script
-            // but we can add additional initialization if needed
+        // Form validation styling
+        document.querySelectorAll('select, input').forEach(input => {
+            input.addEventListener('invalid', function() {
+                this.style.borderColor = 'var(--danger)';
+                this.style.backgroundColor = '#fef2f2';
+            });
             
-            // Add loading animation for ads (optional)
-            const adContainers = document.querySelectorAll('.ad-container');
-            adContainers.forEach(container => {
-                if (container.innerHTML.trim() === '') {
-                    container.innerHTML = '<div class="ad-loading">Loading advertisement...</div>';
+            input.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.style.borderColor = 'var(--primary)';
+                    this.style.backgroundColor = 'white';
                 }
             });
         });
+        
+        // Mobile ad resizing
+        function resizeAdsForMobile() {
+            const isMobile = window.innerWidth < 768;
+            const ads = document.querySelectorAll('ins.adsbygoogle');
+            
+            ads.forEach(ad => {
+                if (isMobile) {
+                    // Adjust large banner for mobile
+                    if (ad.getAttribute('data-ad-slot') === '5327077706') {
+                        ad.style.width = '320px';
+                        ad.style.height = '100px';
+                    }
+                    // Adjust medium rectangle for mobile
+                    if (ad.getAttribute('data-ad-slot') === '7171654179') {
+                        ad.style.width = '300px';
+                        ad.style.height = '250px';
+                    }
+                }
+            });
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            resizeAdsForMobile();
+            window.addEventListener('resize', resizeAdsForMobile);
+        });
     </script>
     
-    <!-- FAQ SCHEMA FOR SEO -->
+    <!-- FAQ SCHEMA -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -855,23 +961,15 @@
                 "name": "What is high-risk car insurance?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "High-risk car insurance is for drivers who are considered more likely to file a claim. This includes drivers with a history of accidents, traffic violations, DUIs, or those who require an SR-22 filing. Insurance companies may charge higher premiums for these drivers."
+                    "text": "High-risk car insurance is designed for drivers who insurance companies consider more likely to file claims. This includes drivers with traffic violations, at-fault accidents, DUI convictions, or those who require SR-22 filings."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Does SR-22 increase insurance cost?",
+                "name": "How much does SR-22 increase insurance costs?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, an SR-22 filing typically increases insurance costs. An SR-22 is a certificate of financial responsibility required for high-risk drivers. Insurance companies view drivers requiring SR-22 as higher risk, which results in higher premiums."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How can I lower my insurance rate?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You can potentially lower your insurance rate by maintaining a clean driving record, taking defensive driving courses, increasing your deductible, bundling insurance policies, and shopping around for quotes from multiple insurance providers."
+                    "text": "An SR-22 filing can increase insurance costs by 50-150% on average. The exact increase depends on your state, driving history, and insurance company."
                 }
             }
         ]
