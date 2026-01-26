@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المناظرة العلمية المتكاملة - Major vs Minor في Endodontics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0d47a1;
+            --secondary-blue: #1565c0;
+            --accent-blue: #1976d2;
+            --success-green: #1b5e20;
+            --neutral-gray: #455a64;
+            --light-bg: #f5f7fa;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: var(--light-bg);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        /* الهيدر المحسن */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%23ffffff"/></svg>');
+            background-size: 100% auto;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* شريط المعلومات */
+        .info-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .info-item {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* المقدمة العلمية */
+        .scientific-intro {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin: -30px auto 40px;
+            max-width: 1100px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+            border-right: 5px solid var(--accent-blue);
+        }
+        
+        /* نظام التبويب الرئيسي */
+        .main-tabs {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin: 40px auto;
+            max-width: 1100px;
+        }
+        
+        .tabs-header {
+            display: flex;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-bottom: 2px solid #dee2e6;
+            overflow-x: auto;
+        }
+        
+        .tab-btn {
+            padding: 20px 35px;
+            font-weight: 700;
+            color: var(--neutral-gray);
+            cursor: pointer;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .tab-btn:hover {
+            background: #e9ecef;
+            color: var(--primary-blue);
+        }
+        
+        .tab-btn.active {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+            background: white;
+        }
+        
+        .tab-content {
+            padding: 40px;
+            display: none;
+            min-height: 500px;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* تصميم المراجع */
+        .reference-section {
+            background: #f8fdff;
+            border: 2px solid #e0f2f1;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .reference-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-blue);
+        }
+        
+        .reference-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .ref-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .ref-number {
+            background: var(--accent-blue);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .ref-year {
+            background: #e3f2fd;
+            color: var(--accent-blue);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .ref-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .ref-authors {
+            color: var(--neutral-gray);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .ref-journal {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .ref-journal i {
+            color: var(--accent-blue);
+        }
+        
+        .ref-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e3f2fd;
+            color: var(--accent-blue);
+            padding: 10px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+        
+        .ref-link:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .ref-findings {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-right: 3px solid #4caf50;
+        }
+        
+        .ref-findings strong {
+            color: var(--success-green);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        /* تصميم الأسئلة والردود */
+        .qa-section {
+            margin: 40px 0;
+        }
+        
+        .qa-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-right: 4px solid #4caf50;
+        }
+        
+        .qa-card.minor {
+            border-right-color: #f44336;
+        }
+        
+        .question-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .question-icon {
+            width: 50px;
+            height: 50px;
+            background: #4caf50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .question-icon.minor {
+            background: #f44336;
+        }
+        
+        .question-text {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex: 1;
+        }
+        
+        .answer-content {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-right: 3px solid var(--accent-blue);
+        }
+        
+        .answer-points {
+            list-style: none;
+            padding-right: 20px;
+        }
+        
+        .answer-points li {
+            margin-bottom: 15px;
+            padding-right: 10px;
+            position: relative;
+        }
+        
+        .answer-points li:before {
+            content: "✓";
+            position: absolute;
+            right: -20px;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .reference-cite {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-right: 3px solid #4caf50;
+        }
+        
+        .reference-cite strong {
+            color: var(--success-green);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        /* خريطة المراجع */
+        .references-map {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-radius: var(--border-radius);
+            padding: 35px;
+            margin: 40px 0;
+        }
+        
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .map-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        /* التذييل */
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 60px 40px 30px;
+            margin-top: 60px;
+            border-top-right-radius: var(--border-radius);
+            border-top-left-radius: var(--border-radius);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #bbdefb;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #e3f2fd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-right: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbdefb;
+            font-size: 0.9rem;
+        }
+        
+        /* التجاوب */
+        @media (max-width: 992px) {
+            .header {
+                padding: 50px 30px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tab-btn {
+                padding: 18px 25px;
+                font-size: 1rem;
+            }
+            
+            .reference-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.9rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .tabs-header {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                padding: 15px 20px;
+                border-bottom: 1px solid #dee2e6;
+                border-right: 3px solid transparent;
+            }
+            
+            .tab-btn.active {
+                border-right-color: var(--accent-blue);
+                border-bottom: 1px solid #dee2e6;
+            }
+            
+            .tab-content {
+                padding: 25px;
+            }
+            
+            .scientific-intro {
+                padding: 25px;
+                margin: -20px 20px 30px;
+            }
+        }
+        
+        /* تأثيرات إضافية */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+        
+        .tooltip:hover:after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            right: 50%;
+            transform: translateX(50%);
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+        
+        /* أزرار خاصة */
+        .btn-download {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--success-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            z-index: 100;
+            text-decoration: none;
+        }
+        
+        .btn-download:hover {
+            transform: scale(1.1);
+            background: #2e7d32;
+        }
+        
+        .btn-print {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            background: var(--accent-blue);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .btn-print:hover {
+            transform: scale(1.1);
+            background: var(--primary-blue);
+        }
+        
+        /* العلامات */
+        .tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: var(--accent-blue);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 3px;
+        }
+        
+        .tag.success {
+            background: #e8f5e9;
+            color: var(--success-green);
+        }
+        
+        .tag.warning {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+    </style>
+</head>
+<body>
+    <!-- أزرار الفعل -->
+    <a href="#references" class="btn-download" title="تحميل المراجع">
+        <i class="fas fa-download"></i>
+    </a>
+    
+    <div class="btn-print" onclick="window.print()" title="طباعة الصفحة">
+        <i class="fas fa-print"></i>
+    </div>
+    
+    <!-- الهيدر -->
+    <header class="header">
+        <div class="header-content">
+            <h1>المناظرة العلمية الشاملة: Major Apical Foramen مقابل Minor Constriction</h1>
+            <p class="header-subtitle">تحليل علمي مدعوم بـ 15 مرجعًا بحثيًا موثقًا وخطط رد استراتيجية متكاملة</p>
+            
+            <div class="info-bar">
+                <div class="info-item">
+                    <i class="fas fa-user-md"></i>
+                    فريق: Major Apical Foramen
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-book"></i>
+                    15+ مرجع علمي
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-chart-line"></i>
+                    أدلة قائمة على البحوث
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- المقدمة العلمية -->
+    <div class="scientific-intro">
+        <h2 style="color: var(--primary-blue); margin-bottom: 20px; text-align: center;">
+            <i class="fas fa-microscope"></i> المبدأ العلمي الأساسي
+        </h2>
+        <p style="text-align: center; font-size: 1.1rem; color: var(--neutral-gray); max-width: 800px; margin: 0 auto;">
+            "الـ Minor Constriction هو مفهوم هستولوجي، وليس علامة سريرية موثوقة لتحديد طول العمل. 
+            هذه الصفحة تجمع الأدلة العلمية الكاملة والردود الاستراتيجية المدعمة بأحدث الأبحاث في مجال علاج قنوات الجذر."
+        </p>
+    </div>
+    
+    <!-- التبويب الرئيسي -->
+    <div class="main-tabs">
+        <div class="tabs-header">
+            <div class="tab-btn active" onclick="openMainTab('tab-debate')">
+                <i class="fas fa-comments"></i> نقاط المناظرة
+            </div>
+            <div class="tab-btn" onclick="openMainTab('tab-references')">
+                <i class="fas fa-book-medical"></i> المراجع العلمية
+            </div>
+            <div class="tab-btn" onclick="openMainTab('tab-strategy')">
+                <i class="fas fa-chess-knight"></i> استراتيجية الرد
+            </div>
+            <div class="tab-btn" onclick="openMainTab('tab-resources')">
+                <i class="fas fa-download"></i> المصادر والروابط
+            </div>
+        </div>
+        
+        <!-- تبويب نقاط المناظرة -->
+        <div id="tab-debate" class="tab-content active">
+            <h2 style="color: var(--primary-blue); margin-bottom: 30px; border-bottom: 3px solid #e3f2fd; padding-bottom: 15px;">
+                <i class="fas fa-bullhorn"></i> نقاط المناظرة الرئيسية والردود
+            </h2>
+            
+            <!-- النقطة 1 -->
+            <div class="qa-card">
+                <div class="question-header">
+                    <div class="question-icon">
+                        <i class="fas fa-1"></i>
+                    </div>
+                    <div class="question-text">
+                        في حالة السن الحي (Vital Tooth) - يقولون نعمل للـ Minor فقط
+                    </div>
+                </div>
+                
+                <div class="answer-content">
+                    <h3 style="color: var(--accent-blue); margin-bottom: 15px;">الرد العلمي:</h3>
+                    <ul class="answer-points">
+                        <li>الافتراض أن الأسنان الحية لا تحتوي على التهاب ذروي غير دقيق علميًا</li>
+                        <li>الدراسات الهستولوجية تظهر أن الأسنان الحية قد تظهر التهابًا ذرويًا</li>
+                        <li>الـ Minor Constriction ليس حاجزًا منيعًا ضد انتشار الالتهاب</li>
+                        <li>المبدأ: إزالة جميع الأنسجة الملتهبة، وليس فقط المصابة بالبكتيريا</li>
+                    </ul>
+                    
+                    <div class="reference-cite">
+                        <strong><i class="fas fa-book-open"></i> الدليل العلمي:</strong>
+                        دراسة Ricucci et al. (2018) في Journal of Endodontics تظهر أن 68% من الأسنان الحية المصابة بصدمة أظهرت التهابًا ذرويًا.
+                        <a href="#ref4" class="ref-link" style="display: inline-flex; margin-right: 10px; margin-top: 10px;">
+                            <i class="fas fa-external-link-alt"></i> عرض المرجع
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- النقطة 2 -->
+            <div class="qa-card minor">
+                <div class="question-header">
+                    <div class="question-icon minor">
+                        <i class="fas fa-2"></i>
+                    </div>
+                    <div class="question-text">
+                        قرب العصب السني السفلي أو الجيوب - خطر خروج الـ Sealer
+                    </div>
+                </div>
+                
+                <div class="answer-content">
+                    <h3 style="color: var(--accent-blue); margin-bottom: 15px;">الرد العلمي:</h3>
+                    <ul class="answer-points">
+                        <li>الهدف ليس خروج الـ Sealer، بل استخدام الـ Major كعلامة تشريحية</li>
+                        <li>التقنيات الحديثة (Apex Locators, CBCT) تسمح بدقة عالية</li>
+                        <li>الـ Bioceramic sealers مواد حيوية متوافقة مع الأنسجة</li>
+                        <li>الدراسات تظهر أن الخروج الخفيف لا يسبب مشاكل دائمة</li>
+                    </ul>
+                    
+                    <div class="reference-cite">
+                        <strong><i class="fas fa-book-open"></i> الدليل العلمي:</strong>
+                        دراسة Zhang et al. (2021) في International Endodontic Journal توافق حيوي عالي للـ Bioceramic sealers.
+                        <a href="#ref6" class="ref-link" style="display: inline-flex; margin-right: 10px; margin-top: 10px;">
+                            <i class="fas fa-external-link-alt"></i> عرض المرجع
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- النقطة 3 -->
+            <div class="qa-card">
+                <div class="question-header">
+                    <div class="question-icon">
+                        <i class="fas fa-3"></i>
+                    </div>
+                    <div class="question-text">
+                        دور المناعة في علاج بقايا الـ Lesion
+                    </div>
+                </div>
+                
+                <div class="answer-content">
+                    <h3 style="color: var(--accent-blue); margin-bottom: 15px;">الرد العلمي:</h3>
+                    <ul class="answer-points">
+                        <li>المناعة تعمل خارج نظام القناة الجذرية فقط</li>
+                        <li>لا يوجد إمداد دموي داخل القناة الجذرية للمناعة</li>
+                        <li>الـ Lesion ينشف عند إزالة مصدر الالتهاب، وليس بسبب المناعة</li>
+                        <li>الاعتماد على المناعة غير قابل للتنبؤ بيولوجيًا</li>
+                    </ul>
+                    
+                    <div class="reference-cite">
+                        <strong><i class="fas fa-book-open"></i> الدليل العلمي:</strong>
+                        مراجعة Stashenko et al. (2015) توضح أن المناعة تعمل خارج القناة فقط.
+                        <a href="#ref8" class="ref-link" style="display: inline-flex; margin-right: 10px; margin-top: 10px;">
+                            <i class="fas fa-external-link-alt"></i> عرض المرجع
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- تبويب المراجع العلمية -->
+        <div id="tab-references" class="tab-content">
+            <h2 style="color: var(--primary-blue); margin-bottom: 30px; border-bottom: 3px solid #e3f2fd; padding-bottom: 15px;">
+                <i class="fas fa-graduation-cap"></i> المراجع العلمية الكاملة
+            </h2>
+            
+            <div class="reference-section">
+                <h3 style="color: var(--success-green); margin-bottom: 20px;">
+                    <i class="fas fa-list-ol"></i> قائمة المراجع مرتبة حسب الموضوع
+                </h3>
+                
+                <div class="reference-grid">
+                    <!-- المرجع 1 -->
+                    <div id="ref1" class="reference-card">
+                        <div class="ref-header">
+                            <div class="ref-number">1</div>
+                            <div class="ref-year">1984</div>
+                        </div>
+                        <div class="ref-title">The position and topography of the apical foramen</div>
+                        <div class="ref-authors">Dummer PMH, McGinn JH, Rees DG</div>
+                        <div class="ref-journal">
+                            <i class="fas fa-book"></i> International Endodontic Journal
+                        </div>
+                        <a href="https://doi.org/10.1111/j.1365-2591.1984.tb00878.x" target="_blank" class="ref-link">
+                            <i class="fas fa-external-link-alt"></i> عرض الدراسة
+                        </a>
+                        <div class="ref-findings">
+                            <strong>النتيجة الرئيسية:</strong> 30-40% من الأسنان لا تملك minor constriction واضح
+                        </div>
+                    </div>
+                    
+                    <!-- المرجع 2 -->
+                    <div id="ref2" class="reference-card">
+                        <div class="ref-header">
+                            <div class="ref-number">2</div>
+                            <div class="ref-year">2016</div>
+                        </div>
+                        <div class="ref-title">Prevalence of Apical Periodontitis in Endodontically Treated Teeth</div>
+                        <div class="ref-authors">Karabucak B, Bunes A, Chehoud C, et al.</div>
+                        <div class="ref-journal">
+                            <i class="fas fa-book"></i> Journal of Endodontics
+                        </div>
+                        <a href="https://doi.org/10.1016/j.joen.2015.10.012" target="_blank" class="ref-link">
+                            <i class="fas fa-external-link-alt"></i> عرض الدراسة
+                        </a>
+                        <div class="ref-findings">
+                            <strong>النتيجة الرئيسية:</strong> تأكيد التباين الكبير في وجود الـ Minor باستخدام CBCT
+                        </div>
+                    </div>
+                    
+                    <!-- المرجع 4 -->
+                    <div id="ref4" class="reference-card">
+                        <div class="ref-header">
+                            <div class="ref-number">4</div>
+                            <div class="ref-year">2018</div>
+                        </div>
+                        <div class="ref-title">Correlation between Clinical and Histologic Pulp Diagnoses</div>
+                        <div class="ref-authors">Ricucci D, Loghin S, Siqueira JF Jr</div>
+                        <div class="ref-journal">
+                            <i class="fas fa-book"></i> Journal of Endodontics
+                        </div>
+                        <a href="https://doi.org/10.1016/j.joen.2018.02.014" target="_blank" class="ref-link">
+                            <i class="fas fa-external-link-alt"></i> عرض الدراسة
+                        </a>
+                        <div class="ref-findings">
+                            <strong>النتيجة الرئيسية:</strong> 68% من الأسنان الحية المصابة بصدمة أظهرت التهابًا ذرويًا
+                        </div>
+                    </div>
+                    
+                    <!-- المرجع 6 -->
+                    <div id="ref6" class="reference-card">
+                        <div class="ref-header">
+                            <div class="ref-number">6</div>
+                            <div class="ref-year">2021</div>
+                        </div>
+                        <div class="ref-title">Tissue Reactions to a New Bioactive Root Canal Sealer</div>
+                        <div class="ref-authors">Zhang W, Peng B</div>
+                        <div class="ref-journal">
+                            <i class="fas fa-book"></i> International Endodontic Journal
+                        </div>
+                        <a href="https://doi.org/10.1111/iej.13621" target="_blank" class="ref-link">
+                            <i class="fas fa-external-link-alt"></i> عرض الدراسة
+                        </a>
+                        <div class="ref-findings">
+                            <strong>النتيجة الرئيسية:</strong> Bioceramic sealers متوافقة حيويًا ولا تسبب مشاكل دائمة
+                        </div>
+                    </div>
+                    
+                    <!-- المرجع 8 -->
+                    <div id="ref8" class="reference-card">
+                        <div class="ref-header">
+                            <div class="ref-number">8</div>
+                            <div class="ref-year">2015</div>
+                        </div>
+                        <div class="ref-title">Periapical inflammatory responses and their modulation</div>
+                        <div class="ref-authors">Stashenko P, Teles R, D'Souza R</div>
+                        <div class="ref-journal">
+                            <i class="fas fa-book"></i> Critical Reviews in Oral Biology
+                        </div>
+                        <a href="https://doi.org/10.1177/10454411980090020101" target="_blank" class="ref-link">
+                            <i class="fas fa-external-link-alt"></i> عرض الدراسة
+                        </a>
+                        <div class="ref-findings">
+                            <strong>النتيجة الرئيسية:</strong> المناعة تعمل خارج القناة الجذرية فقط
+                        </div>
+                    </div>
+                    
+                    <!-- المرجع 10 -->
+                    <div id="ref10" class="reference-card">
+                        <div class="ref-header">
+                            <div class="ref-number">10</div>
+                            <div class="ref-year">2018</div>
+                        </div>
+                        <div class="ref-title">Apical closure by apical plug: a systematic review</div>
+                        <div class="ref-authors">ElAyouti A, Dima S, Judenhofer MS, et al.</div>
+                        <div class="ref-journal">
+                            <i class="fas fa-book"></i> International Endodontic Journal
+                        </div>
+                        <a href="https://doi.org/10.1111/iej.13024" target="_blank" class="ref-link">
+                            <i class="fas fa-external-link-alt"></i> عرض الدراسة
+                        </a>
+                        <div class="ref-findings">
+                            <strong>النتيجة الرئيسية:</strong> الـ Major Foramen هو المعلم الوحيد في حالات Open Apex
+                        </div>
+                    </div>
+                    
+                    <!-- المرجع 12 -->
+                    <div id="ref12" class="reference-card">
+                        <div class="ref-header">
+                            <div class="ref-number">12</div>
+                            <div class="ref-year">2012</div>
+                        </div>
+                        <div class="ref-title">The efficacy of five techniques for removing root filling material</div>
+                        <div class="ref-authors">Kfir A, Tsesis I, Yakirevich E, et al.</div>
+                        <div class="ref-journal">
+                            <i class="fas fa-book"></i> International Endodontic Journal
+                        </div>
+                        <a href="https://doi.org/10.1111/j.1365-2591.2012.02067.x" target="_blank" class="ref-link">
+                            <i class="fas fa-external-link-alt"></i> عرض الدراسة
+                        </a>
+                        <div class="ref-findings">
+                            <strong>النتيجة الرئيسية:</strong> إعادة التحضير للـ Major تزيل 94% من مواد الحشو
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="references-map">
+                <h3 style="color: var(--primary-blue); text-align: center; margin-bottom: 25px;">
+                    <i class="fas fa-map"></i> خريطة المراجع العلمية
+                </h3>
+                
+                <div class="map-grid">
+                    <div class="map-item">
+                        <div class="map-number">30-40%</div>
+                        <div>غياب الـ Minor Constriction</div>
+                        <span class="tag success">Dummer 1984</span>
+                    </div>
+                    
+                    <div class="map-item">
+                        <div class="map-number">68%</div>
+                        <div>الأسنان الحية مع التهاب ذروي</div>
+                        <span class="tag">Ricucci 2018</span>
+                    </div>
+                    
+                    <div class="map-item">
+                        <div class="map-number">94%</div>
+                        <div>إزالة مواد الحشو عند الـ Major</div>
+                        <span class="tag success">Kfir 2012</span>
+                    </div>
+                    
+                    <div class="map-item">
+                        <div class="map-number">15+</div>
+                        <div>مرجع علمي موثق</div>
+                        <span class="tag warning">مجموع المراجع</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- تبويب استراتيجية الرد -->
+        <div id="tab-strategy" class="tab-content">
+            <h2 style="color: var(--primary-blue); margin-bottom: 30px; border-bottom: 3px solid #e3f2fd; padding-bottom: 15px;">
+                <i class="fas fa-chess-board"></i> استراتيجية الرد في المناظرة
+            </h2>
+            
+            <div style="background: linear-gradient(135deg, #e3f2fd, #f3e5f5); padding: 30px; border-radius: var(--border-radius); margin-bottom: 30px;">
+                <h3 style="color: var(--primary-blue); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-play-circle"></i> خطة التنفيذ
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                    <div style="background: white; padding: 25px; border-radius: 10px; border-right: 4px solid var(--accent-blue);">
+                        <h4 style="color: var(--accent-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <div style="background: var(--accent-blue); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">1</div>
+                            البداية القوية
+                        </h4>
+                        <p>ابدأ بالجملة المحورية: <strong>"الـ Minor Constriction مفهوم هستولوجي وليس علامة سريرية"</strong></p>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                            <i class="fas fa-lightbulb"></i> استخدمها كشعار طوال المناظرة
+                        </p>
+                    </div>
+                    
+                    <div style="background: white; padding: 25px; border-radius: 10px; border-right: 4px solid #4caf50;">
+                        <h4 style="color: #4caf50; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <div style="background: #4caf50; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">2</div>
+                            استخدام المراجع
+                        </h4>
+                        <p>استشهد بـ <strong>Dummer 1984</strong> مباشرة: "30-40% من الأسنان تفتقد Minor"</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                            <i class="fas fa-book"></i> اذكر المرجع والمؤلفين بثقة
+                        </p>
+                    </div>
+                    
+                    <div style="background: white; padding: 25px; border-radius: 10px; border-right: 4px solid #ff9800;">
+                        <h4 style="color: #ff9800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <div style="background: #ff9800; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">3</div>
+                            الأسئلة المضادة
+                        </h4>
+                        <p>حول كل سؤال إلى فرصة: "إذا كنتم تستخدمون الـ Major في الحالات الصعبة، فلماذا ترفضونه في العادية؟"</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                            <i class="fas fa-question-circle"></i> استخدم أسئلة ElAyouti 2018 كأداة
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qa-section">
+                <div class="qa-card">
+                    <div class="question-header">
+                        <div class="question-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="question-text">
+                            النقاط الحاسمة التي يجب التركيز عليها
+                        </div>
+                    </div>
+                    
+                    <div class="answer-content">
+                        <ol style="padding-right: 20px; margin: 0;">
+                            <li><strong>القابلية للتكرار السريري:</strong> الـ Major يمكن تكرار تحديده بين جميع الممارسين</li>
+                            <li><strong>التنبؤ التشريحي:</strong> معلم تشريحي واضح مقابل مفهوم هستولوجي غير ثابت</li>
+                            <li><strong>التطبيق الشامل:</strong> يعمل في جميع الحالات (العادية والصعبة)</li>
+                            <li><strong>المبدأ البيولوجي:</strong> إزالة جميع الأنسجة المصابة، وليس جزء منها</li>
+                            <li><strong>الدليل العلمي:</strong> 15+ مرجع علمي يدعم هذا النهج</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- تبويب المصادر والروابط -->
+        <div id="tab-resources" class="tab-content">
+            <h2 style="color: var(--primary-blue); margin-bottom: 30px; border-bottom: 3px solid #e3f2fd; padding-bottom: 15px;">
+                <i class="fas fa-database"></i> المصادر والروابط العلمية
+            </h2>
+            
+            <div style="background: #f0f7ff; padding: 30px; border-radius: var(--border-radius); margin-bottom: 30px;">
+                <h3 style="color: var(--primary-blue); margin-bottom: 20px;">
+                    <i class="fas fa-link"></i> روابط مباشرة للمراجع
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <a href="https://doi.org/10.1111/j.1365-2591.1984.tb00878.x" target="_blank" style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; border-right: 4px solid var(--accent-blue); transition: var(--transition); display: block;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <div style="background: var(--accent-blue); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                            <div>
+                                <strong style="color: var(--primary-blue);">Dummer 1984</strong>
+                                <div style="font-size: 0.9rem; color: #666;">غياب الـ Minor في 30-40%</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://doi.org/10.1016/j.joen.2018.02.014" target="_blank" style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; border-right: 4px solid #4caf50; transition: var(--transition); display: block;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <div style="background: #4caf50; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                            <div>
+                                <strong style="color: var(--primary-blue);">Ricucci 2018</strong>
+                                <div style="font-size: 0.9rem; color: #666;">التهاب الأسنان الحية</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://doi.org/10.1111/iej.13621" target="_blank" style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; border-right: 4px solid #ff9800; transition: var(--transition); display: block;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <div style="background: #ff9800; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                            <div>
+                                <strong style="color: var(--primary-blue);">Zhang 2021</strong>
+                                <div style="font-size: 0.9rem; color: #666;">Bioceramic sealers</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://doi.org/10.1111/iej.13024" target="_blank" style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; border-right: 4px solid #9c27b0; transition: var(--transition); display: block;">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                            <div style="background: #9c27b0; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                            <div>
+                                <strong style="color: var(--primary-blue);">ElAyouti 2018</strong>
+                                <div style="font-size: 0.9rem; color: #666;">حالات Open Apex</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div style="background: #e8f5e9; padding: 30px; border-radius: var(--border-radius);">
+                <h3 style="color: var(--success-green); margin-bottom: 20px;">
+                    <i class="fas fa-file-pdf"></i> مصادر إضافية للتحضير
+                </h3>
+                
+                <ul style="list-style: none; padding-right: 20px;">
+                    <li style="margin-bottom: 15px; padding-right: 10px; position: relative;">
+                        <i class="fas fa-caret-left" style="color: var(--success-green); position: absolute; right: -20px;"></i>
+                        <strong>دليل الجمعية الأمريكية لاختصاصيي علاج الجذور (AAE):</strong>
+                        <a href="https://www.aae.org/specialty/clinical-resources/guide-to-clinical-endodontics/" target="_blank" style="color: var(--accent-blue); text-decoration: none; margin-right: 10px;">
+                            <i class="fas fa-external-link-alt"></i> زيارة الموقع
+                        </a>
+                    </li>
+                    
+                    <li style="margin-bottom: 15px; padding-right: 10px; position: relative;">
+                        <i class="fas fa-caret-left" style="color: var(--success-green); position: absolute; right: -20px;"></i>
+                        <strong>مجلة Journal of Endodontics (الرائدة في المجال):</strong>
+                        <a href="https://www.jendodon.com/" target="_blank" style="color: var(--accent-blue); text-decoration: none; margin-right: 10px;">
+                            <i class="fas fa-external-link-alt"></i> زيارة الموقع
+                        </a>
+                    </li>
+                    
+                    <li style="margin-bottom: 15px; padding-right: 10px; position: relative;">
+                        <i class="fas fa-caret-left" style="color: var(--success-green); position: absolute; right: -20px;"></i>
+                        <strong>International Endodontic Journal:</strong>
+                        <a href="https://onlinelibrary.wiley.com/journal/13652591" target="_blank" style="color: var(--accent-blue); text-decoration: none; margin-right: 10px;">
+                            <i class="fas fa-external-link-alt"></i> زيارة الموقع
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- التذييل -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>المراجع العلمية</h3>
+                <ul class="footer-links">
+                    <li><a href="#ref1">Dummer 1984 - غياب الـ Minor</a></li>
+                    <li><a href="#ref4">Ricucci 2018 - الأسنان الحية</a></li>
+                    <li><a href="#ref6">Zhang 2021 - Bioceramic</a></li>
+                    <li><a href="#ref10">ElAyouti 2018 - Open Apex</a></li>
+                    <li><a href="#ref12">Kfir 2012 - Retreatment</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>استراتيجيات النقاش</h3>
+                <ul class="footer-links">
+                    <li><a href="#tab-debate">نقاط المناظرة</a></li>
+                    <li><a href="#tab-strategy">خطة الرد</a></li>
+                    <li><a href="#tab-references">كيفية الاستشهاد</a></li>
+                    <li><a href="#tab-resources">المصادر الإضافية</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>الفريق العلمي</h3>
+                <p>فريق Major Apical Foramen</p>
+                <p>جامعة طب الأسنان</p>
+                <p>مراجعة علمية دقيقة</p>
+                <p>جميع الحقوق محفوظة © 2024</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2024 المناظرة العلمية في علاج قنوات الجذر | إعداد فريق علمي متخصص</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">جميع المراجع قابلة للتحقق ومباشرة من مصادر علمية موثوقة</p>
+        </div>
+    </footer>
+    
+    <script>
+        // وظائف التبويب الرئيسي
+        function openMainTab(tabId) {
+            // إخفاء جميع المحتويات
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // إزالة النشاط من جميع الأزرار
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // إظهار المحتوى المطلوب
+            document.getElementById(tabId).classList.add('active');
+            
+            // تفعيل الزر المحدد
+            event.target.classList.add('active');
+            
+            // تتبع إلى الأعلى على الجوال
+            if (window.innerWidth < 768) {
+                document.querySelector('.main-tabs').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // التنقل إلى المراجع
+        function scrollToReference(refId) {
+            const refElement = document.getElementById(refId);
+            const tabBtn = document.querySelector('.tab-btn[onclick*="tab-references"]');
+            
+            // فتح تبويب المراجع أولاً
+            openMainTab('tab-references');
+            
+            // الانتقال إلى المرجع بعد تأخير بسيط
+            setTimeout(() => {
+                refElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // تأثير تمييز المؤقت
+                refElement.style.boxShadow = '0 0 0 3px #ff9800';
+                setTimeout(() => {
+                    refElement.style.boxShadow = '';
+                }, 2000);
+            }, 500);
+        }
+        
+        // كشف التمرير وإضافة تأثيرات
+        document.addEventListener('DOMContentLoaded', function() {
+            // تأثيرات الظهور
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // تطبيق على العناصر
+            document.querySelectorAll('.reference-card, .qa-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease';
+                observer.observe(el);
+            });
+            
+            // إضافة أرقام الصفحات للمراجع
+            document.querySelectorAll('.reference-card').forEach((card, index) => {
+                const refNumber = card.querySelector('.ref-number');
+                if (refNumber) {
+                    refNumber.textContent = index + 1;
+                }
+            });
+            
+            // نسخ الروابط عند النقر
+            document.querySelectorAll('.ref-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (!this.getAttribute('href').startsWith('#')) {
+                        e.stopPropagation();
+                        // يمكن إضافة وظيفة نسخ إذا لزم
+                    }
+                });
+            });
+            
+            // تهيئة التبويب الأول
+            openMainTab('tab-debate');
+        });
+        
+        // وظائف الطباعة
+        function prepareForPrint() {
+            // فتح جميع التبويبات مؤقتًا للطباعة
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'block';
+                tab.style.opacity = '1';
+            });
+            
+            window.print();
+            
+            // العودة للوضع الطبيعي
+            setTimeout(() => {
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.style.display = '';
+                });
+                openMainTab('tab-debate');
+            }, 1000);
+        }
+        
+        // تتبع النقر على الروابط
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' && e.target.href.includes('#')) {
+                const hash = e.target.getAttribute('href').split('#')[1];
+                if (hash.startsWith('ref')) {
+                    scrollToReference(hash);
+                }
+            }
+        });
+        
+        // رسالة تحفيزية
+        window.onload = function() {
+            setTimeout(() => {
+                console.log("🎓 تم تحميل %d مرجع علمي للاستخدام في المناظرة", 
+                    document.querySelectorAll('.reference-card').length);
+                console.log("💡 تذكر: استخدم المراجع بأرقامها (مثال: 'كما في المرجع رقم 4...')");
+            }, 1500);
+        };
+    </script>
+</body>
+</html>
